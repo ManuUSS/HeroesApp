@@ -3,14 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './auth/pages/login/login.component';
-import { AddComponent } from './modules/heores/components/add/add.component';
+import { ErrorPageComponent } from './shared/pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    AddComponent
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
