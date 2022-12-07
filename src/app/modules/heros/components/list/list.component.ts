@@ -9,7 +9,7 @@ import { HeroesService } from '../../services/heroes.service';
     `
       mat-card {
         margin-top: 20px;
-        }
+      }
     `
   ]
 })
