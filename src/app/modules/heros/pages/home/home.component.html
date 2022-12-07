@@ -1,2 +1,15 @@
-<p>home works!</p>
+
+<mat-drawer-container fullscreen>
+    <mat-sidenav #sidenav>
+        <h2>Hola</h2>
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <button mat-icon-button 
+            (click)="sidenav.toggle()"
+        >
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+</mat-drawer-container>
 <router-outlet></router-outlet>

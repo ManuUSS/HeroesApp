@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { HerosRoutingModule } from './heros-routing.module';
+import { MaterialModule } from '../material/material.module';
 
 import { AddComponent } from './components/add/add.component';
 import { SearchComponent } from './components/search/search.component';
@@ -23,6 +24,7 @@ import { ListComponent } from './components/list/list.component';
   imports: [
     CommonModule,
     FlexLayoutModule,
+    MaterialModule,
     HerosRoutingModule
   ]
 })
