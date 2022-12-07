@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-list',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor( private heroService:HeroesService ) { }
 
   ngOnInit(): void {
+    this.heroService.getHeros()
+      .subscribe( resp => {
+        console.log( resp );
+      });
   }
 
 }
