@@ -1,7 +1,34 @@
 
-<mat-drawer-container fullscreen>
-    <mat-sidenav #sidenav>
-        <h2>Hola</h2>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+            <button mat-icon-button 
+                (click)="sidenav.toggle()"
+            >
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a routerLink="./list" mat-list-item
+                (click)="sidenav.toggle()"
+            >
+                <mat-icon mat-list-icon>label</mat-icon>
+                <span>Lista de héroes</span>
+            </a>
+            <a routerLink="./add" mat-list-item
+                (click)="sidenav.toggle()"
+            >
+                <mat-icon mat-list-icon>add</mat-icon>
+                <span>Agregar heroe</span>
+            </a>
+            <a routerLink="./searc" mat-list-item
+                (click)="sidenav.toggle()"
+            >
+                <mat-icon mat-list-icon>searc</mat-icon>
+                <span>Buscar héroes</span>
+            </a>
+        </mat-nav-list>
     </mat-sidenav>
 
     <mat-toolbar>
@@ -11,5 +38,6 @@
             <mat-icon>menu</mat-icon>
         </button>
     </mat-toolbar>
-</mat-drawer-container>
-<router-outlet></router-outlet>
+
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
