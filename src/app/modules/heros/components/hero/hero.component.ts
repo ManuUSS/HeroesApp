@@ -6,7 +6,15 @@ import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-hero',
-  templateUrl: './hero.component.html'
+  templateUrl: './hero.component.html',
+  styles: [
+    `
+    img {
+      width: 100%;
+      border-radius: 5px;
+    } 
+  `
+  ]
 })
 export class HeroComponent implements OnInit {
 
