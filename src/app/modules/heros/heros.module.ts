@@ -11,6 +11,7 @@ import { SearchComponent } from './components/search/search.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './components/list/list.component';
+import { ImagePipe } from './pipes/image.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { ListComponent } from './components/list/list.component';
     SearchComponent,
     HeroComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    ImagePipe
   ],
   imports: [
     CommonModule,
