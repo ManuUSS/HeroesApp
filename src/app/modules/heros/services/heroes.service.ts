@@ -13,4 +13,9 @@ export class HeroesService {
   getHeros():Observable<HerosResponse[]> {
     return this.http.get<HerosResponse[]>('http://localhost:3000/heroes');
   }
+
+  getHeroById( id:string ):Observable<HerosResponse> {
+    return this.http.get<HerosResponse>(`http://localhost:3000/heroes/${ id }`);
+  }
+  
 }
