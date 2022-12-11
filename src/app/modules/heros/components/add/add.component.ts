@@ -95,6 +95,7 @@ export class AddComponent implements OnInit {
 
     this.dialog.open( ConfirmComponent, {
       width: '320px',
+      data: { ...this.hero }
     })
 
     //this.heroService.deleteHero( this.hero.id! )

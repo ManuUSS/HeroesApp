@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { HerosResponse, Publisher } from '../../interfaces/heros.interface';
 
 @Component({
@@ -22,16 +23,9 @@ import { HerosResponse, Publisher } from '../../interfaces/heros.interface';
 })
 export class ConfirmComponent {
 
-  public hero:HerosResponse = {
-    superhero: '',
-    alter_ego: '',
-    characters: '',
-    first_appearance: '',
-    publisher: Publisher.DCComics,
-    alt_img: ''
-  }
 
-  constructor( private dialogRef: MatDialogRef<ConfirmComponent> ) { }
+  constructor( private dialogRef: MatDialogRef<ConfirmComponent>,
+        @Inject(MAT_DIALOG_DATA) public data: HerosResponse ) { }
 
   delete = () => {
     this.dialogRef.close(true);
