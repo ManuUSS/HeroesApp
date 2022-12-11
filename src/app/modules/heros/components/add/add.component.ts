@@ -12,6 +12,17 @@ import { switchMap } from 'rxjs';
       mat-icon {
         padding-right: 5px;
       }
+
+      img {
+        width: 40%;
+        border-radius: 5px;
+      }
+
+      .img-container {
+        display: flex;
+        justify-content: center;
+      }
+
     `
   ]
 })
