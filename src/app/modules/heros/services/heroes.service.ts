@@ -29,4 +29,8 @@ export class HeroesService {
     return this.http.post<HerosResponse>(`${ this.baseUrl }/heroes`, hero);
   }
 
+  updateHero( hero:HerosResponse ):Observable<HerosResponse> {
+    return this.http.put<HerosResponse>(`${ this.baseUrl }/heroes/${ hero.id }`, hero);
+  }
+
 }
