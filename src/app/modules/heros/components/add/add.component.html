@@ -55,10 +55,16 @@
                 required    
             />
         </mat-form-field>
-        <button mat-raised-button color="accent" (click)="saveHero()">
-            <mat-icon>add</mat-icon>
-            Agregar héroe
-        </button>
+        <div fxFlex="row" fxLayoutGap="20px">
+            <button mat-raised-button color="accent" (click)="saveHero()">
+                <mat-icon>add</mat-icon>
+                Agregar héroe
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteHero()">
+                <mat-icon>delete</mat-icon>
+                Borrar héroe
+            </button>
+        </div>
     </div>
     <div fxFlex="50" fxFlexAlign="center" class="img-container">
         <img [src]="hero | image" alt="No image" class="img-thumbnail">

@@ -13,6 +13,10 @@ import { switchMap } from 'rxjs';
         padding-right: 5px;
       }
 
+      button {
+        width: calc(50% - 10px);
+      }
+
       img {
         max-width: 40%;
         border-radius: 5px;
@@ -77,9 +81,14 @@ export class AddComponent implements OnInit {
       .subscribe( resp => {
         this.router.navigate(['/heros/edit', resp.id]);
       });
-    }
+    }    
+  }
 
-    
+  deleteHero = () => {
+    this.heroService.deleteHero( this.hero.id! )
+    .subscribe( resp => {
+      this.router.navigate(['/heros']);
+    });
   }
 
 }
