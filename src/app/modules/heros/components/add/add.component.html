@@ -59,9 +59,9 @@
         <div fxFlex="row" fxLayoutGap="20px">
             <button mat-raised-button color="accent" (click)="saveHero()">
                 <mat-icon>add</mat-icon>
-                Agregar héroe
+                {{ (hero.id) ? 'Actualizar' : 'Agregar' }} héroe
             </button>
-            <button mat-raised-button color="warn" (click)="deleteHero()">
+            <button *ngIf="hero.id" mat-raised-button color="warn" (click)="deleteHero()">
                 <mat-icon>delete</mat-icon>
                 Borrar héroe
             </button>
