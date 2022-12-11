@@ -39,4 +39,8 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  saveHero = () => {
+    console.log(this.hero);
+  }
+
 }
