@@ -21,6 +21,8 @@ import { switchMap } from 'rxjs';
       .img-container {
         display: flex;
         justify-content: center;
+        background: linear-gradient(90deg, rgba(48,48,48,1) 0%, rgba(35,35,35,1) 77%, rgba(33,33,33,1) 100%);
+
       }
 
     `
