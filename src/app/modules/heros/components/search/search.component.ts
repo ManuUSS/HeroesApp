@@ -18,12 +18,16 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search = (  ) => {
-    this.herosService.getHeroSugerences( this.term.trim() )
+  search = () => {
+    this.herosService.getHeroSugerences( this.term.trim() ) 
       .subscribe( heros => this.heros = heros );
   }
 
   selected = ( event: MatAutocompleteSelectedEvent ) => {
+    if ( !event.option.value ) {
+      this.selectedHero = undefined;
+      return;  
+    }
     const hero: HerosResponse = event.option.value;
     this.term = hero.superhero;
     this.herosService.getHeroById( hero.id! )
