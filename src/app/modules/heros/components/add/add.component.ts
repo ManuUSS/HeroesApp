@@ -4,6 +4,7 @@ import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add',
@@ -57,7 +58,8 @@ export class AddComponent implements OnInit {
   constructor( private heroService: HeroesService, 
       private activatedRoute: ActivatedRoute,
       private router:Router,
-      private snackBar: MatSnackBar ) { }
+      private snackBar: MatSnackBar,
+      public dialog: MatDialog ) { }
 
   ngOnInit(): void {
     
@@ -89,6 +91,9 @@ export class AddComponent implements OnInit {
   }
 
   deleteHero = () => {
+
+    //this.dialog.open( ConfirmDialogComponent, {
+
     this.heroService.deleteHero( this.hero.id! )
     .subscribe( resp => {
       this.router.navigate(['/heros']);
