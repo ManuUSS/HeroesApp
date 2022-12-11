@@ -3,7 +3,14 @@ import { HerosResponse, Publisher } from '../../interfaces/heros.interface';
 
 @Component({
   selector: 'app-add',
-  templateUrl: './add.component.html'
+  templateUrl: './add.component.html',
+  styles: [
+    `
+      mat-icon {
+        padding-right: 5px;
+      }
+    `
+  ]
 })
 export class AddComponent implements OnInit {
 
