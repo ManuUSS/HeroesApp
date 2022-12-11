@@ -1,1 +1,13 @@
-<p>confirm works!</p>
+<div>
+    <h1>¿Estás seguro?</h1>
+    <hr/>
+    <span>
+        Estás a punto de eliminar a {{ hero.superhero }}.
+        <br/>
+        ¿Estás seguro de que quieres continuar?
+    </span>
+    <div class="button-container">
+        <button mat-raised-button color="accent" (click)="delete()">Sí</button>
+        <button mat-raised-button color="warn" (click)="cancel()">No</button>
+    </div>
+</div>

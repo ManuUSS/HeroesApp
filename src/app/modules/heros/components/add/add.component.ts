@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmComponent } from '../confirm/confirm.component';
 
 @Component({
   selector: 'app-add',
@@ -92,13 +93,15 @@ export class AddComponent implements OnInit {
 
   deleteHero = () => {
 
-    //this.dialog.open( ConfirmDialogComponent, {
+    this.dialog.open( ConfirmComponent, {
+      width: '320px',
+    })
 
-    this.heroService.deleteHero( this.hero.id! )
-    .subscribe( resp => {
-      this.router.navigate(['/heros']);
-      this.showSnackBar('¡Heroe eliminado!');
-    });
+    //this.heroService.deleteHero( this.hero.id! )
+    //.subscribe( resp => {
+    //  this.router.navigate(['/heros']);
+    //  this.showSnackBar('¡Heroe eliminado!');
+    //});
   }
 
   showSnackBar = ( message:string ) => {
