@@ -46,7 +46,7 @@ export class AddComponent implements OnInit {
     this.heroService.addHero( this.hero )
       .subscribe( resp => {
         console.log(resp);
-      }
+      });
   }
 
 }
