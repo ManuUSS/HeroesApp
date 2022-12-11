@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { HerosResponse, Publisher } from '../../interfaces/heros.interface';
 
 @Component({
@@ -19,7 +20,7 @@ import { HerosResponse, Publisher } from '../../interfaces/heros.interface';
     `
   ]
 })
-export class ConfirmComponent implements OnInit {
+export class ConfirmComponent {
 
   public hero:HerosResponse = {
     superhero: '',
@@ -30,17 +31,14 @@ export class ConfirmComponent implements OnInit {
     alt_img: ''
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor( private dialogRef: MatDialogRef<ConfirmComponent> ) { }
 
   delete = () => {
-    console.log('delete');
+    this.dialogRef.close(true);
   }
 
   cancel = () => {
-    console.log('cancel');
+    this.dialogRef.close();
   }
 
 }
