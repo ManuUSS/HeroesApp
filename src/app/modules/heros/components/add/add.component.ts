@@ -93,16 +93,21 @@ export class AddComponent implements OnInit {
 
   deleteHero = () => {
 
-    this.dialog.open( ConfirmComponent, {
+    const dialogConfirm = this.dialog.open( ConfirmComponent, {
       width: '320px',
       data: { ...this.hero }
     })
 
-    //this.heroService.deleteHero( this.hero.id! )
-    //.subscribe( resp => {
-    //  this.router.navigate(['/heros']);
-    //  this.showSnackBar('¡Heroe eliminado!');
-    //});
+    dialogConfirm.afterClosed()
+      .subscribe( (result) => {
+        if( result ) {
+          this.heroService.deleteHero( this.hero.id! )
+          .subscribe( resp => {
+            this.router.navigate(['/heros']);
+            this.showSnackBar('¡Heroe eliminado!');
+          });
+        }
+      });
   }
 
   showSnackBar = ( message:string ) => {
