@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable, tap, map } from 'rxjs';
+import { Observable, tap, map, of } from 'rxjs';
 import { Auth } from '../interfaces/auth.interface';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class AuthService {
 
   verifyAuth = ():Observable<boolean> => {
     if( !localStorage.getItem('id') )
-      return new Observable<boolean>( observer => observer.next(false) );
+      return of(false);
     
     return this.http.get<Auth>(`${this.baseUrl}/usuarios/1`)
             .pipe(
