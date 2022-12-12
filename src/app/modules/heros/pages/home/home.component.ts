@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   logout = () => {
-    this.router.navigate(['./auth/login'])
+    this.router.navigate(['./auth'])
   }
 
 }
