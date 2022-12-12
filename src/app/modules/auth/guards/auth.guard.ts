@@ -13,16 +13,13 @@ export class AuthGuard implements CanActivate, CanLoad {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      if( this.authService.auth.id )
-        return true;
-      return false;
+      return this.authService.verifyAuth();
   }
 
   canLoad(
     route: Route,
-    segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-      if( this.authService.auth.id )
-        return true;
-      return false;
+    segments: UrlSegment[]): Observable<boolean> | boolean {
+      return this.authService.verifyAuth();
+     
   }
 }
